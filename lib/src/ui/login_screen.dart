@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'forgot_password_screen.dart';
+import 'home_screen.dart';
 import 'signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -22,9 +23,9 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor:  Color(0xFF2C2C2C),
         body: SingleChildScrollView(
-            padding: EdgeInsets.fromLTRB(40.0, 100.0, 40.0, 0.0),
+            padding: EdgeInsets.fromLTRB(40.0, 60.0, 40.0, 20.0),
             child: Form(
               key: _formKey,
               child: Column(
@@ -36,13 +37,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xFFF6F8FC),
+                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
                         prefixIcon: Icon(Icons.mail_outline), // icon
                         hintText: "Email",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00))),
+                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderRadius: BorderRadius.circular(7.0),
+                            ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
                         )),
@@ -65,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xFFF6F8FC),
+                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
                         prefixIcon: Icon(Icons.lock_outline),
                         suffixIcon: IconButton(
@@ -85,7 +88,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintText: "Senha",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00))),
+                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderRadius: BorderRadius.circular(7.0),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
                         )),
@@ -112,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (_) => ForgotPasswordScreen()));
                         },
-                        child: Text("Esqueceu sua senha?"),
+                        child: Text("Esqueceu sua senha?", style: TextStyle(color: Colors.white),),
                       )
                     ],
                   ),
@@ -122,9 +126,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 42.0,
                       child: RaisedButton(
                           onPressed: () {
-                            if (_formKey.currentState.validate()) {
-                              // print('Validado');
-                            }
+                            // if (_formKey.currentState.validate()) {
+                            //   // print('Validado');
+                            // }
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (_) => Home()));
                           },
                           child: Text(
                             'Entrar',
@@ -138,24 +144,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               borderRadius: BorderRadius.circular(13.0))),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => SignupScreen()));
-                        },
-                        child: Text("Não possuí conta? Crie uma",
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w500
-                            )),
-                      )
-                    ],
-                  ),
                   Padding(
-                    padding: EdgeInsets.only(top: 26.0, bottom: 10.0),
+                    padding: EdgeInsets.only(top: 0, bottom: 30.0),
                     child: Container(
                       height: 42,
                       child: RaisedButton(
@@ -175,6 +165,34 @@ class _LoginScreenState extends State<LoginScreen> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0))),
                     ),
+                  ),
+                                    Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (_) => SignupScreen()));
+                        },
+                        child: Text("Não possuí conta? ",
+                            style: TextStyle(
+                              fontSize: 14.0,
+                              color: Colors.white
+                            )),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (_) => SignupScreen()));
+                        },
+                        child: Text("Crie uma",
+                            style: TextStyle(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
+                            )),
+                      )
+                    ],
                   ),
                 ],
               ),

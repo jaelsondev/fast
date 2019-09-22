@@ -12,7 +12,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFF2C2C2C),
         body: SingleChildScrollView(
             padding: EdgeInsets.fromLTRB(40.0, 100.0, 40.0, 0.0),
             child: Form(
@@ -26,7 +26,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xFFF6F8FC),
+                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
                         prefixIcon: Icon(Icons.mail_outline), // icon
                         hintText: "Email",

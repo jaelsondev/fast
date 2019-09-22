@@ -23,9 +23,9 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFF2C2C2C),
         body: SingleChildScrollView(
-            padding: EdgeInsets.fromLTRB(40.0, 100.0, 40.0, 0.0),
+            padding: EdgeInsets.fromLTRB(40.0, 60.0, 40.0, 20.0),
             child: Form(
               key: _formKey,
               child: Column(
@@ -36,13 +36,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   TextFormField(
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xFFF6F8FC),
+                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
                         prefixIcon: Icon(Icons.person_outline), // icon
                         hintText: "Nome",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00))),
+                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderRadius: BorderRadius.circular(7.0),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
                         )),
@@ -60,13 +61,14 @@ class _SignupScreenState extends State<SignupScreen> {
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xFFF6F8FC),
+                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
                         prefixIcon: Icon(Icons.mail_outline), // icon
                         hintText: "Email",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00))),
+                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderRadius: BorderRadius.circular(7.0),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
                         )),
@@ -88,7 +90,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xFFF6F8FC),
+                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
                         prefixIcon: Icon(Icons.lock_outline), // icon
                         suffixIcon: IconButton(
@@ -107,7 +109,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         hintText: "Senha",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00))),
+                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderRadius: BorderRadius.circular(7.0),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
                         )),
@@ -130,7 +133,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     obscureText: _obscureConfirmPassword,
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xFFF6F8FC),
+                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
                         prefixIcon: Icon(Icons.lock_outline), // icon
                         suffixIcon: IconButton(
@@ -150,7 +153,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         hintText: "Confirme sua senha",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00))),
+                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderRadius: BorderRadius.circular(7.0),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
                         )),
@@ -197,9 +201,17 @@ class _SignupScreenState extends State<SignupScreen> {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Text("Já possuí conta? Fazer login",
+                        child: Text("Já possuí conta? ",
                             style: TextStyle(
-                                fontSize: 16.0, fontWeight: FontWeight.w500)),
+                                fontSize: 16.0, color: Colors.white)),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("Fazer login",
+                            style: TextStyle(
+                                fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white)),
                       )
                     ],
                   ),
