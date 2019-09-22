@@ -13,6 +13,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xFF2C2C2C),
+        appBar: new AppBar(
+          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+        ),
         body: SingleChildScrollView(
             padding: EdgeInsets.fromLTRB(40.0, 100.0, 40.0, 0.0),
             child: Form(

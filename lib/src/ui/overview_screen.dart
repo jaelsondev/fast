@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'event_screen.dart';
+import 'restaurant_screen.dart';
 
 class OverviewScreen extends StatefulWidget {
   @override
@@ -172,7 +173,8 @@ class _OverviewScreenState extends State<OverviewScreen> {
   Widget buildRestaurants(String uri, String title) {
     return GestureDetector(
         onTap: () {
-          print('object');
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (_) => RestaurantScreen()));
         },
         child: Container(
           width: 80.0,

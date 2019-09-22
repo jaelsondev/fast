@@ -16,14 +16,14 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _obscurePassword;
 
   @override
-  void initState(){
+  void initState() {
     _obscurePassword = true;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor:  Color(0xFF2C2C2C),
+        backgroundColor: Color(0xFF2C2C2C),
         body: SingleChildScrollView(
             padding: EdgeInsets.fromLTRB(40.0, 60.0, 40.0, 20.0),
             child: Form(
@@ -43,9 +43,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintText: "Email",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
-                            borderRadius: BorderRadius.circular(7.0),
-                            ),
+                          borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                          borderRadius: BorderRadius.circular(7.0),
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
                         )),
@@ -74,22 +74,23 @@ class _LoginScreenState extends State<LoginScreen> {
                         suffixIcon: IconButton(
                           icon: Icon(
                             _obscurePassword
-                            ? Icons.visibility
-                            : Icons.visibility_off,
+                                ? Icons.visibility
+                                : Icons.visibility_off,
                             color: Theme.of(context).primaryColor,
-                            ),
+                          ),
                           onPressed: () {
                             setState(() {
-                                _obscurePassword = !_obscurePassword;
+                              _obscurePassword = !_obscurePassword;
                             });
                           },
-                          ),
+                        ),
                         // icon
                         hintText: "Senha",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
-                            borderRadius: BorderRadius.circular(7.0),),
+                          borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                          borderRadius: BorderRadius.circular(7.0),
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
                         )),
@@ -116,7 +117,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (_) => ForgotPasswordScreen()));
                         },
-                        child: Text("Esqueceu sua senha?", style: TextStyle(color: Colors.white),),
+                        child: Text(
+                          "Esqueceu sua senha?",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       )
                     ],
                   ),
@@ -129,8 +133,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             // if (_formKey.currentState.validate()) {
                             //   // print('Validado');
                             // }
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => Home()));
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => Home()));
                           },
                           child: Text(
                             'Entrar',
@@ -166,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               borderRadius: BorderRadius.circular(16.0))),
                     ),
                   ),
-                                    Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       GestureDetector(
@@ -175,10 +179,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               builder: (_) => SignupScreen()));
                         },
                         child: Text("Não possuí conta? ",
-                            style: TextStyle(
-                              fontSize: 14.0,
-                              color: Colors.white
-                            )),
+                            style:
+                                TextStyle(fontSize: 14.0, color: Colors.white)),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -187,10 +189,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: Text("Crie uma",
                             style: TextStyle(
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white
-                            )),
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
                       )
                     ],
                   ),
