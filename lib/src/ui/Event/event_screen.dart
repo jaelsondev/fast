@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 
-class EventScreen extends StatefulWidget {
-  @override
-  _EventScreenState createState() => _EventScreenState();
-}
-
-class _EventScreenState extends State<EventScreen> {
-  TextEditingController emailController = TextEditingController();
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+class EventScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
         backgroundColor: Color(0xFF2C2C2C),
         appBar: new AppBar(
           iconTheme: IconThemeData(color: Colors.white),

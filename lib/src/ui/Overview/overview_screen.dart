@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'event_screen.dart';
-import 'restaurant_screen.dart';
+import '../Event/event_screen.dart';
+import '../Restaurant/restaurant_screen.dart';
 
 class OverviewScreen extends StatefulWidget {
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'forgot_password_screen.dart';
-import 'home_screen.dart';
-import 'signup_screen.dart';
+import '../Forgot/forgot_password_screen.dart';
+import '../Home/home_screen.dart';
+import '../Signup/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

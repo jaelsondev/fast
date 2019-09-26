@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-import '../models/restaurant.dart';
-import 'event_screen.dart';
+import '../../models/restaurant.dart';
+import '../Event/event_screen.dart';
 
 class RestaurantScreen extends StatefulWidget {
   @override
@@ -106,32 +106,6 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        // backgroundColor: Color(0xFF2C2C2C),
-        backgroundColor: Color(0xFF2C2C2C),
-        selectedItemColor: Color(0xFFFD7A4A),
-        unselectedItemColor: Colors.white,
-        currentIndex: 0,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.white),
-              activeIcon: Icon(Icons.home, color: Color(0xFFFD7A4A)),
-              title: Text('Início')),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.search, color: Colors.white),
-          //     activeIcon: Icon(Icons.search, color: Color(0xFFFD7A4A)),
-          //     title: Text('Pesquisar')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart, color: Colors.white),
-              activeIcon: Icon(Icons.shopping_cart, color: Color(0xFFFD7A4A)),
-              title: Text('Carrinho')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.face, color: Colors.white),
-              activeIcon: Icon(Icons.face, color: Color(0xFFFD7A4A)),
-              title: Text('Perfil'))
-        ],
       ),
     );
   }
