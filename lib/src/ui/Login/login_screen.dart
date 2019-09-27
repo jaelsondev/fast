@@ -23,36 +23,35 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF2C2C2C),
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
-            padding: EdgeInsets.fromLTRB(40.0, 60.0, 40.0, 20.0),
+            padding: EdgeInsets.fromLTRB(40.0, 70.0, 40.0, 20.0),
             child: Form(
               key: _formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Icon(Icons.fastfood, size: 120.0, color: Theme.of(context).primaryColor),
+                  Icon(Icons.fastfood,
+                      size: 120.0, color: Theme.of(context).primaryColor),
                   SizedBox(height: 70.0),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFF5C5C5C),
-                        contentPadding: EdgeInsets.symmetric(vertical: 15.0),
-                        prefixIcon: Icon(Icons.mail_outline), // icon
+                        contentPadding: EdgeInsets.symmetric(vertical: 10.0),
+                        prefixIcon: Icon(
+                          Icons.mail_outline,
+                          color: Theme.of(context).primaryColor,
+                        ), // icon
                         hintText: "Email",
-                        hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                          borderRadius: BorderRadius.circular(7.0),
+                          borderSide:
+                              BorderSide(color: Theme.of(context).primaryColor),
                         ),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7.0),
+                          borderRadius: BorderRadius.circular(5.0),
                         )),
-                    style: TextStyle(
-                        color: Color(0xFFAAAAAA),
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                     controller: emailController,
                     validator: (value) {
                       Pattern pattern =
@@ -67,10 +66,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     keyboardType: TextInputType.emailAddress,
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFF5C5C5C),
-                        contentPadding: EdgeInsets.symmetric(vertical: 15.0),
-                        prefixIcon: Icon(Icons.lock_outline),
+                        contentPadding: EdgeInsets.symmetric(vertical: 10.0),
+                        prefixIcon: Icon(
+                          Icons.lock_outline,
+                          color: Theme.of(context).primaryColor,
+                        ),
                         suffixIcon: IconButton(
                           icon: Icon(
                             _obscurePassword
@@ -86,18 +86,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         // icon
                         hintText: "Senha",
-                        hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                          borderRadius: BorderRadius.circular(7.0),
+                          borderSide:
+                              BorderSide(color: Theme.of(context).primaryColor),
                         ),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7.0),
+                          borderRadius: BorderRadius.circular(5.0),
                         )),
-                    style: TextStyle(
-                        color: Color(0xFFAAAAAA),
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                     controller: passwordController,
                     validator: (value) {
                       if (value.isEmpty) {
@@ -119,7 +116,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: Text(
                           "Esqueceu sua senha?",
-                          style: TextStyle(color: Colors.white),
                         ),
                       )
                     ],
@@ -140,12 +136,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             'Entrar',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold),
+                                fontSize: 16.0),
                           ),
                           color: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(13.0))),
+                              borderRadius: BorderRadius.circular(5.0))),
                     ),
                   ),
                   Padding(
@@ -162,12 +157,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             'Entrar com Facebook',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.bold),
+                                fontSize: 16.0),
                           ),
                           color: Colors.blue,
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16.0))),
+                              borderRadius: BorderRadius.circular(5.0))),
                     ),
                   ),
                   Row(
@@ -179,8 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               builder: (_) => SignupScreen()));
                         },
                         child: Text("Não possuí conta? ",
-                            style:
-                                TextStyle(fontSize: 14.0, color: Colors.white)),
+                            style: TextStyle(fontSize: 14.0)),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -189,9 +182,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: Text("Crie uma",
                             style: TextStyle(
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white)),
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            )),
                       )
                     ],
                   ),
