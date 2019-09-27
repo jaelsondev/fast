@@ -63,34 +63,36 @@ class _HomeState extends State<Home> {
           return isFirstRouteInCurrentTab;
         },
         child: Scaffold(
-          backgroundColor: Color(0xFF282828),
+          backgroundColor: Colors.white,
           body: Stack(children: <Widget>[
             _buildOffstageNavigator(0),
             _buildOffstageNavigator(1),
             _buildOffstageNavigator(2),
           ]),
           bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Colors.white,
             onTap: onTabTapped,
-            // backgroundColor: Color(0xFF2C2C2C),
-            backgroundColor: Color(0xFF2C2C2C),
-            selectedItemColor: Color(0xFFFD7A4A),
-            unselectedItemColor: Colors.white,
+            unselectedItemColor: Colors.grey[800],
             currentIndex: _currentIndex,
             type: BottomNavigationBarType.fixed,
             items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home, color: Colors.white),
-                  activeIcon: Icon(Icons.home, color: Color(0xFFFD7A4A)),
-                  title: Text('Início')),
+                  icon: Icon(Icons.home, color: Colors.grey[800], size: 26),
+                  activeIcon: Icon(Icons.home, color: Theme.of(context).primaryColor, size: 26),
+                  title: Text("", style: TextStyle(fontSize: 0))),
+              // BottomNavigationBarItem(
+              //     icon: Icon(Icons.search, color: Colors.grey[800], size: 26),
+              //     activeIcon: Icon(Icons.search, color: Theme.of(context).primaryColor, size: 26),
+              //     title: Text("", style: TextStyle(fontSize: 0))),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart, color: Colors.white),
+                  icon: Icon(Icons.shopping_cart, color: Colors.grey[800], size: 26),
                   activeIcon:
-                      Icon(Icons.shopping_cart, color: Color(0xFFFD7A4A)),
-                  title: Text('Carrinho')),
+                      Icon(Icons.shopping_cart, color: Theme.of(context).primaryColor, size: 26),
+                  title: Text("", style: TextStyle(fontSize: 0))),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.face, color: Colors.white),
-                  activeIcon: Icon(Icons.face, color: Color(0xFFFD7A4A)),
-                  title: Text('Perfil'))
+                  icon: Icon(Icons.face, color: Colors.grey[800], size: 26),
+                  activeIcon: Icon(Icons.face, color: Theme.of(context).primaryColor, size: 26),
+                  title: Text("", style: TextStyle(fontSize: 0)))
             ],
           ),
         ));
