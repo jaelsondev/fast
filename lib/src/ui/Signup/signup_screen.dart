@@ -23,7 +23,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF2C2C2C),
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
             padding: EdgeInsets.fromLTRB(40.0, 60.0, 40.0, 20.0),
             child: Form(
@@ -31,26 +31,26 @@ class _SignupScreenState extends State<SignupScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Icon(Icons.fastfood, size: 120.0, color: Theme.of(context).primaryColor),
+                  Icon(Icons.fastfood,
+                      size: 120.0, color: Theme.of(context).primaryColor),
                   SizedBox(height: 70.0),
                   TextFormField(
                     decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFF5C5C5C),
-                        contentPadding: EdgeInsets.symmetric(vertical: 15.0),
-                        prefixIcon: Icon(Icons.person_outline), // icon
+                        contentPadding: EdgeInsets.symmetric(vertical: 10.0),
+                        prefixIcon: Icon(
+                          Icons.person_outline,
+                          color: Theme.of(context).primaryColor,
+                        ), // icon
                         hintText: "Nome",
-                        hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                            borderRadius: BorderRadius.circular(7.0),),
+                          borderSide:
+                              BorderSide(color: Theme.of(context).primaryColor),
+                        ),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7.0),
+                          borderRadius: BorderRadius.circular(5.0),
                         )),
-                    style: TextStyle(
-                        color: Color(0xFFAAAAAA),
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                     controller: nameController,
                     validator: (value) {
                       if (value.isEmpty) return 'Informe o seu nome';
@@ -60,22 +60,19 @@ class _SignupScreenState extends State<SignupScreen> {
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
-                        prefixIcon: Icon(Icons.mail_outline), // icon
+                        prefixIcon: Icon(Icons.mail_outline,
+                            color: Theme.of(context).primaryColor), // icon
                         hintText: "Email",
-                        hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                            borderRadius: BorderRadius.circular(7.0),),
+                          borderSide:
+                              BorderSide(color: Theme.of(context).primaryColor),
+                        ),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7.0),
+                          borderRadius: BorderRadius.circular(5.0),
                         )),
-                    style: TextStyle(
-                        color: Color(0xFFAAAAAA),
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                     controller: emailController,
                     validator: (value) {
                       Pattern pattern =
@@ -89,10 +86,9 @@ class _SignupScreenState extends State<SignupScreen> {
                   TextFormField(
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
-                        prefixIcon: Icon(Icons.lock_outline), // icon
+                        prefixIcon: Icon(Icons.lock_outline,
+                            color: Theme.of(context).primaryColor), // icon
                         suffixIcon: IconButton(
                           icon: Icon(
                             _obscurePassword
@@ -107,17 +103,15 @@ class _SignupScreenState extends State<SignupScreen> {
                           },
                         ),
                         hintText: "Senha",
-                        hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                            borderRadius: BorderRadius.circular(7.0),),
+                          borderSide:
+                              BorderSide(color: Theme.of(context).primaryColor),
+                        ),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7.0),
+                          borderRadius: BorderRadius.circular(5.0),
                         )),
-                    style: TextStyle(
-                        color: Color(0xFFAAAAAA),
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                     controller: passwordController,
                     validator: (value) {
                       if (value.isEmpty) {
@@ -132,10 +126,9 @@ class _SignupScreenState extends State<SignupScreen> {
                   TextFormField(
                     obscureText: _obscureConfirmPassword,
                     decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFF5C5C5C),
                         contentPadding: EdgeInsets.symmetric(vertical: 15.0),
-                        prefixIcon: Icon(Icons.lock_outline), // icon
+                        prefixIcon: Icon(Icons.lock_outline,
+                            color: Theme.of(context).primaryColor), // icon
                         suffixIcon: IconButton(
                           icon: Icon(
                             _obscureConfirmPassword
@@ -151,17 +144,15 @@ class _SignupScreenState extends State<SignupScreen> {
                           },
                         ),
                         hintText: "Confirme sua senha",
-                        hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                            borderRadius: BorderRadius.circular(7.0),),
+                          borderSide:
+                              BorderSide(color: Theme.of(context).primaryColor),
+                        ),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7.0),
+                          borderRadius: BorderRadius.circular(5.0),
                         )),
-                    style: TextStyle(
-                        color: Color(0xFFAAAAAA),
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                     controller: confirmPasswordController,
                     validator: (value) {
                       if (value.isEmpty) {
@@ -185,13 +176,13 @@ class _SignupScreenState extends State<SignupScreen> {
                           child: Text(
                             'Cadastrar',
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontSize: 16.0,
+                            ),
                           ),
                           color: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(13.0))),
+                              borderRadius: BorderRadius.circular(5.0))),
                     ),
                   ),
                   Row(
@@ -202,8 +193,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Navigator.pop(context);
                         },
                         child: Text("Já possuí conta? ",
-                            style: TextStyle(
-                                fontSize: 16.0, color: Colors.white)),
+                            style: TextStyle(fontSize: 14.0)),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -211,7 +201,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         },
                         child: Text("Fazer login",
                             style: TextStyle(
-                                fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white)),
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            )),
                       )
                     ],
                   ),
