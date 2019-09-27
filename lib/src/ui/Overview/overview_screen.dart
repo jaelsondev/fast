@@ -20,24 +20,20 @@ class _OverviewScreenState extends State<OverviewScreen> {
             child: TextField(
               decoration: InputDecoration(
                   filled: true,
-                  fillColor: Color(0xFF343434),
-                  contentPadding: EdgeInsets.symmetric(vertical: 15.0),
-                  prefixIcon:
-                      Icon(Icons.search, color: Color(0xFFAAAAAA)), // icon
+                  fillColor: Colors.grey[200],
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 1.0, horizontal: 16),
+                  suffixIcon: Icon(
+                    Icons.search,
+                    color: Theme.of(context).primaryColor,
+                  ), // icon
                   hintText: "Evento ou restaurante",
-                  hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
-                  focusedBorder: OutlineInputBorder(
-                      // borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                      // borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(13.0)),
+                  focusedBorder:
+                      OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).primaryColor)),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(13.0),
-                    borderSide: BorderSide.none,
-                  )),
-              style: TextStyle(
-                  color: Color(0xFFAAAAAA),
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold),
+                      borderRadius: BorderRadius.circular(5.0),
+                      borderSide: BorderSide.none)),
+              style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
             ),
           ),
           SizedBox(height: 30),
@@ -49,7 +45,6 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
                       )),
                 ],
               )),
@@ -86,7 +81,6 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
                       )),
                 ],
               )),
@@ -97,7 +91,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
             child: ListView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              padding: const EdgeInsets.only(left: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               scrollDirection: Axis.vertical,
               children: <Widget>[
                 buildRestaurants(
@@ -178,37 +172,75 @@ class _OverviewScreenState extends State<OverviewScreen> {
               .push(MaterialPageRoute(builder: (_) => RestaurantScreen()));
         },
         child: Container(
+          decoration: BoxDecoration(
+              border:
+                  Border(bottom: BorderSide(color: Colors.black45, width: .3))),
           width: 80.0,
-          height: 80.0,
+          height: 90.0,
           margin: EdgeInsets.only(bottom: 18.0),
           child: Stack(children: <Widget>[
-            ClipRRect(
-                borderRadius: new BorderRadius.circular(13.0),
-                child: Image.network(
-                  uri,
-                  fit: BoxFit.cover,
-                  height: 80.0,
-                  width: 80.0,
-                )),
-            // Column(
-            //     verticalDirection: VerticalDirection.up,
-            //     crossAxisAlignment: CrossAxisAlignment.stretch,
-            //     children: <Widget>[
-            //       Container(
-            //           margin: EdgeInsets.only(bottom: 15),
-            //           color: Colors.black38,
-            //           child: Padding(
-            //             padding: EdgeInsets.only(left: 6.0),
-            //             child: Text(
-            //               title,
-            //               style: TextStyle(
-            //                 color: Colors.white,
-            //                 fontSize: 12.0,
-            //                 fontWeight: FontWeight.w500,
-            //               ),
-            //             ),
-            //           )),
-            //     ]),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black45, width: .3),
+                borderRadius: BorderRadius.circular(13.0),
+              ),
+              child: ClipRRect(
+                  borderRadius: new BorderRadius.circular(13.0),
+                  child: Image.network(
+                    uri,
+                    fit: BoxFit.cover,
+                    height: 80.0,
+                    width: 80.0,
+                  )),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 100, top: 5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text('Subway Juazeiro',
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                  SizedBox(height: 5),
+                  Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.star,
+                        size: 12,
+                        color: Color(0xFFFFB657),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 3, right: 5),
+                        child: Text('4,8',
+                            style: TextStyle(
+                                fontSize: 12, color: Color(0xFFFFB657))),
+                      ),
+                      Text('Bar e Lanchonete',
+                          style:
+                              TextStyle(fontSize: 12, color: Colors.grey[400]))
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('15h - 22h',
+                      style: TextStyle(fontSize: 12, color: Colors.grey[400]))
+                  // SizedBox(
+                  //   height: 20,
+                  // ),
+                  // Align(
+                  //   alignment: Alignment.bottomRight,
+                  //   child: GestureDetector(
+                  //     onTap: () {},
+                  //     child: Text(
+                  //       'Aberto',
+                  //       style: TextStyle(color: Colors.green[300]),
+                  //     ),
+                  //   ),
+                  // )
+                ],
+              ),
+            ),
           ]),
         ));
   }
