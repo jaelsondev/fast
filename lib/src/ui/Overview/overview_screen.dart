@@ -27,7 +27,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                   hintText: "Evento ou restaurante",
                   hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                   focusedBorder: OutlineInputBorder(
-                      // borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                      // borderSide: BorderSide(color: Theme.of(context).primaryColor),
                       // borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(13.0)),
                   border: OutlineInputBorder(
@@ -94,10 +94,11 @@ class _OverviewScreenState extends State<OverviewScreen> {
             height: 30,
           ),
           Container(
-            height: 80.0,
             child: ListView(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               padding: const EdgeInsets.only(left: 20.0),
-              scrollDirection: Axis.horizontal,
+              scrollDirection: Axis.vertical,
               children: <Widget>[
                 buildRestaurants(
                     'https://img.freepik.com/free-vector/lamp-drink-logo_124994-67.jpg?size=338&ext=jpg',
@@ -179,14 +180,15 @@ class _OverviewScreenState extends State<OverviewScreen> {
         child: Container(
           width: 80.0,
           height: 80.0,
-          margin: EdgeInsets.only(right: 18.0),
+          margin: EdgeInsets.only(bottom: 18.0),
           child: Stack(children: <Widget>[
             ClipRRect(
                 borderRadius: new BorderRadius.circular(13.0),
                 child: Image.network(
                   uri,
                   fit: BoxFit.cover,
-                  height: 80,
+                  height: 80.0,
+                  width: 80.0,
                 )),
             // Column(
             //     verticalDirection: VerticalDirection.up,

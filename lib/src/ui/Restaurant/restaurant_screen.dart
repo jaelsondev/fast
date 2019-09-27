@@ -37,7 +37,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     hintText: "Digite o numero da mesa",
                     hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                     focusedBorder: OutlineInputBorder(
-                        // borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                        // borderSide: BorderSide(color: Theme.of(context).primaryColor),
                         // borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(13.0)),
                     border: OutlineInputBorder(

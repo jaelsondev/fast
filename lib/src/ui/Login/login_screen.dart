@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Icon(Icons.fastfood, size: 120.0, color: Color(0xFFFFBD00)),
+                  Icon(Icons.fastfood, size: 120.0, color: Theme.of(context).primaryColor),
                   SizedBox(height: 70.0),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintText: "Email",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                          borderSide: BorderSide(color: Theme.of(context).primaryColor),
                           borderRadius: BorderRadius.circular(7.0),
                         ),
                         border: OutlineInputBorder(
@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintText: "Senha",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                          borderSide: BorderSide(color: Theme.of(context).primaryColor),
                           borderRadius: BorderRadius.circular(7.0),
                         ),
                         border: OutlineInputBorder(
@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold),
                           ),
-                          color: Color(0xFFFFBD00),
+                          color: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(13.0))),
                     ),

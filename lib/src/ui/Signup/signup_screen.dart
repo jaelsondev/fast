@@ -31,7 +31,7 @@ class _SignupScreenState extends State<SignupScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Icon(Icons.fastfood, size: 120.0, color: Color(0xFFFFBD00)),
+                  Icon(Icons.fastfood, size: 120.0, color: Theme.of(context).primaryColor),
                   SizedBox(height: 70.0),
                   TextFormField(
                     decoration: InputDecoration(
@@ -42,7 +42,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         hintText: "Nome",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderSide: BorderSide(color: Theme.of(context).primaryColor),
                             borderRadius: BorderRadius.circular(7.0),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
@@ -67,7 +67,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         hintText: "Email",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderSide: BorderSide(color: Theme.of(context).primaryColor),
                             borderRadius: BorderRadius.circular(7.0),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
@@ -109,7 +109,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         hintText: "Senha",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderSide: BorderSide(color: Theme.of(context).primaryColor),
                             borderRadius: BorderRadius.circular(7.0),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
@@ -153,7 +153,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         hintText: "Confirme sua senha",
                         hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFBD00)),
+                            borderSide: BorderSide(color: Theme.of(context).primaryColor),
                             borderRadius: BorderRadius.circular(7.0),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7.0),
@@ -189,7 +189,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold),
                           ),
-                          color: Color(0xFFFFBD00),
+                          color: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(13.0))),
                     ),
