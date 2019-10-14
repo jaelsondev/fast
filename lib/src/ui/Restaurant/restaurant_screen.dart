@@ -14,9 +14,9 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF282828),
+      backgroundColor: Colors.white,
       appBar: new AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
@@ -24,33 +24,6 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
         padding: EdgeInsets.fromLTRB(0, 20, 0, 20.0),
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 20.0),
-              child: TextField(
-                decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Color(0xFF343434),
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
-                    // prefixIcon:
-                    //     Icon(Icons.search, color: Color(0xFFAAAAAA)), // icon
-                    hintText: "Digite o numero da mesa",
-                    hintStyle: TextStyle(color: Color(0xFFAAAAAA)),
-                    focusedBorder: OutlineInputBorder(
-                        // borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                        // borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(13.0)),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(13.0),
-                      borderSide: BorderSide.none,
-                    )),
-                style: TextStyle(
-                    color: Color(0xFFAAAAAA),
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(height: 30),
             Padding(
                 padding: EdgeInsets.only(left: 20.0),
                 child: Row(
